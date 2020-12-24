@@ -1,3 +1,4 @@
+
 import os
 
 class Nodo:
@@ -143,9 +144,13 @@ class ListaDOBLE:
     def GraficarConArchivo(self):
         f = open("listaDoble.dot", "w")
         f.write("digraph g {\n")
-        f.write("node [shape = rect, width=1, height=0.4];\n")     
+        f.write("node [shape = record,style =\"rounded,filled\"fillcolor=\"orange:red\", width=1, height=0.4];\n")     
         f.write("rankdir=LR;\n")
 
+        temp = self.primero
+        while temp != None:
+            f.write("\""+ str(temp.nombreBase)+ "\"[label =\""+str(temp.nombreBase)+"\"];\n")
+            temp = temp.siguiente
         tmp = self.primero
         while tmp.siguiente != None:
             f.write("\""+str(tmp.nombreBase)+"\"->"+"\""+str(tmp.siguiente.nombreBase)+"\";\n")
@@ -157,4 +162,4 @@ class ListaDOBLE:
         f.write("}")
         f.close()
         os.system("dot -Tjpg listaDoble.dot -o listaDoble.png")
-        os.system("listaDoble.png")
+         os.system("listaDoble.png")
