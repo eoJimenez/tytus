@@ -17,6 +17,7 @@ def dropDatabase(database: str) -> int:
     res_4 = Ld.eliminarNodo(database)
     return res_4
 
+
 def insertT(database, table, register) :
     return T.insert(database,table,register)
 
@@ -32,11 +33,13 @@ def update(database, table, register, columns):
 def graphB(database, table):
     return T.graphbt(database, table)
 
+
 #entran las funciones 5-10 de Edgar
 def alterAddPK(database: str, table: str, columns: list) -> int:
     return T.alterPK(database,table,columns)
 def alterDropPK(database: str, table: str) -> int:
     return T.alterDPK(database,table)
+
 
 #Tablas
 
@@ -59,3 +62,4 @@ def alterDropColumn(database, table, columnNumber) :
     return T.alterDC(database, table, columnNumber)
 def dropTable(database,table) :
     return T.dropT(database,table)
+
