@@ -1,3 +1,4 @@
+
 #Esta es la creación de la ventana principal , la raíz es en donde va la ventana 
 #con .config logramos personalizar cada elemento de la ventana 
 from tkinter import * 
@@ -12,6 +13,7 @@ from TablasD import *
 DB = ListaDOBLE()
 #---Creando objeto para TablasD
 Td = TablasArboles()
+
 raiz = Tk()
 VentanaPrincipal = Frame(raiz, width = 1200, height=600)
 VentanaPrincipal.config(background = "#f9e0ae")
@@ -334,7 +336,6 @@ opciones2.config(background = "#fc8621", fg="white", font = ("Helvetica", 10, "b
 
 #-----------------------------AQUÍ VAN LOS METODOS PARA CREAR LAS BASES DE DATOS --------------- 
 
-
 def CrearDB(base):
 
     #if 1==2: aquí busca la base de datos
@@ -389,7 +390,7 @@ def print_respuesta():
         elif var2.get()== 'Buscar':
             resultado = BuscarDB(BuscarBaseDatos2.get())
         elif var2.get() == 'Renombrar':
-            resultado = RenombrarDB(RenomBaseDatos2.get())
+            resultado = RenombrarDB(RenomBaseDatos2.get(),nomBaseDatos2.get())
                 
         else:
             resultado = EliminarDB(nomBaseDatos2.get())
